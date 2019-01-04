@@ -1,0 +1,27 @@
+## YAML
+index:
+  info: Hi~ Welcome yml
+
+spring:
+  profiles:
+    active: @profileActive@
+
+---
+spring:
+  profiles: dev
+
+  indexInfo: dev
+
+---
+spring:
+  profiles: test
+
+  indexInfo: test
+
+---
+spring:
+  profiles: prod
+
+  indexInfo: prod
+
+
