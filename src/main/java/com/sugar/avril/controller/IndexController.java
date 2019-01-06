@@ -1,7 +1,5 @@
 package com.sugar.avril.controller;
 
-import com.sugar.avril.domain.User;
-import com.sugar.avril.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,17 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-    private String message = "123";
-
-    @Autowired
-    private UserService userService;
+    @Value("${spring.profiles}")
+    private String message;
 
     /**
-     *
-     * Description: 
+     * Description:
      *
      * @param:
-     * @return: 
+     * @return:
      * @auther: xieyuhui
      * @date: 2018-12-30 22:52
      */

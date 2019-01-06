@@ -25,7 +25,7 @@ public class RedisTest extends AvrilApplicationTests{
 
     @Test
     public void test() throws Exception {
-        stringRedisTemplate.opsForValue().set("foo", "遇忙123");
+        stringRedisTemplate.opsForValue().set("username", "刃牙");
     }
 
 }

@@ -3,14 +3,19 @@ package com.sugar.avril;
 import com.sugar.avril.mapper.UserMapper;
 import com.sugar.avril.domain.User;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @Auther: xieyuhui
  * @Date: 2019-01-06 16:08
  * @Description:
  */
-public class UserMapperTest extends AvrilApplicationTests {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class UserMapperTest{
 
     @Autowired
     private UserMapper userMapper;

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import javax.sql.DataSource;
 
 
-@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 @ServletComponentScan
 @MapperScan("com.sugar.avril.mapper")
 public class AvrilApplication {

@@ -1,0 +1,30 @@
+## YAML
+index:
+  info: Hi~ Welcome yml
+
+spring:
+  profiles:
+    active: @profileActive@
+
+---
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/avril?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 12345678
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: prod
+
+
+##mybatis
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.sugar.avril.domain

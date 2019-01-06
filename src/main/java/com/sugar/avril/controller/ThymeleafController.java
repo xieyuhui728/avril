@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * @Auther: xieyuhui
  * @Date: 2018-12-31 15:09
- * @Description:
+ * @Description: spring boot thymeleaf
  */
 @Controller
 @RequestMapping("/thymeleaf")
