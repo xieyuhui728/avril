@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sugar.avril.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.sugar.avril.domain.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="cname" property="cname" jdbcType="VARCHAR"/>
+        <result column="ename" property="ename" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="Integer"/>
+        <result column="create_time" property="createTime" jdbcType="Date"/>
+        <result column="update_time" property="updateTime" jdbcType="Date"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, cname, ename, age, create_time, update_time
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.sugar.avril.domain.User">
+        INSERT INTO
+        user
+        (cname, ename, age, create_time, update_time)
+        VALUES
+        (#{cname}, #{ename}, #{age},NOW(),NOW())
+    </insert>
+
+    <update id="update" parameterType="com.sugar.avril.domain.User">
+        UPDATE
+        user
+        SET
+        <if test="userName != null">cname = #{cname},</if>
+        ename = #{ename},
+        age = #{age},
+        update_time = NOW()
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        UPDATE
+        user
+        SET
+        isdelete = 1
+        WHERE
+        id =#{id}
+    </delete>
+
+    <!--<delete id="delete" parameterType="java.lang.Long">-->
+    <!--DELETE FROM-->
+    <!--users-->
+    <!--WHERE-->
+    <!--id =#{id}-->
+    <!--</delete>-->
+</mapper>

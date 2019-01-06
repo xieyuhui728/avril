@@ -16,7 +16,7 @@ public class JsonController {
     @RequestMapping("/")
     public User json() {
         User user = new User();
-        user.setName("谢宇辉");
+        user.setCname("谢宇辉");
         user.setAge(28);
         return user;
     }
