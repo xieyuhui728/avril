@@ -1,3 +1,5 @@
 # avril
 
-##web项目
+spring boot  
+redis  
+mybatis

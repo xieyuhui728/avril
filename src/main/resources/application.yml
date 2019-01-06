@@ -9,19 +9,17 @@ spring:
 ---
 spring:
   profiles: dev
-
-  indexInfo: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
 
 ---
 spring:
   profiles: test
 
-  indexInfo: test
-
 ---
 spring:
   profiles: prod
-
-  indexInfo: prod
-
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class IndexController {
 
-    @Value("${spring.indexInfo}")
+    @Value("${spring.profiles}")
     private String message;
 
     /**

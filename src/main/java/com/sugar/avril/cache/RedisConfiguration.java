@@ -40,7 +40,6 @@ public class RedisConfiguration extends CachingConfigurerSupport {
             for (Object obj : objects) {
                 sb.append(obj.toString());
             }
-            System.out.println("调用Redis缓存Key : " + sb.toString());
             return sb.toString();
         };
     }
