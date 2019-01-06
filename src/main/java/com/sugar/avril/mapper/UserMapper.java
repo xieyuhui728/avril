@@ -7,7 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
  * @Date: 2019-01-06 15:54
  * @Description:
  */
-@Mapper
 public interface UserMapper {
-    String getTest();
+    String test();
 }
