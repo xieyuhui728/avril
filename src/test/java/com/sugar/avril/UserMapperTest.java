@@ -15,26 +15,24 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class UserMapperTest{
+public class UserMapperTest {
 
     @Autowired
     private UserMapper userMapper;
 
-    //    @Test
-//    public void insert() {
-//        User user = new User();
-//        user.setCname("自来也");
-//        user.setAge(128);
-//        userMapper.insert(user);
-//    }
-//
-//    @Test
-//    public void getOne() {
-//        User user = userMapper.getOne(1);
-//        System.out.println(user.toString());
-//    }
     @Test
-    public void test() {
-        userMapper.test();
+    public void insert() {
+        User user = new User();
+        user.setCname("自来也");
+        user.setAge(128);
+        userMapper.insert(user);
+        System.out.println(user.getId());
     }
+
+    @Test
+    public void getOne() {
+        User user = userMapper.getOne(2L);
+        System.out.println(user.toString());
+    }
+
 }

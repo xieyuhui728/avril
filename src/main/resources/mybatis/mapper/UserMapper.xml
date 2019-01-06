@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper>
-    <select id="test" resultType="java.lang.String">
-        SELECT 1
+<mapper namespace="com.sugar.avril.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.sugar.avril.domain.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="cname" property="cname" jdbcType="VARCHAR"/>
+        <result column="ename" property="ename" jdbcType="VARCHAR"/>
+        <result column="age" property="age" javaType="INTEGER"/>
+        <result column="createTime" property="create_time" jdbcType="DATE"/>
+        <result column="updateTime" property="update_time" jdbcType="DATE"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, cname, ename, age, create_time, update_time
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user
     </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id"
+            parameterType="com.sugar.avril.domain.User">
+       INSERT INTO
+       		user
+       		(cname, ename, age, create_time, update_time)
+       	VALUES
+       		(#{cname}, #{ename}, #{age}, NOW(), NOW())
+    </insert>
+
 </mapper>
+
+
