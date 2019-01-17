@@ -1,6 +1,7 @@
 package com.sugar.avril;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @Description:
  */
 
-
+@Ignore
 public class RedisTest extends AvrilApplicationTests{
     @Autowired
     private StringRedisTemplate stringRedisTemplate;

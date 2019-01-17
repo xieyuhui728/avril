@@ -11,9 +11,9 @@
     <groupId>com.sugar</groupId>
     <artifactId>avril</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>avril</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Avril project for Spring Boot</description>
 
     <properties>
         <java.version>11</java.version>
@@ -28,16 +28,27 @@
             <optional>true</optional>
         </dependency>
 
+        <!--开启yml的配置处理器-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <!--thymeleaf模版引擎-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
         <dependency>
@@ -45,6 +56,14 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.1.1.RELEASE</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>2.1.2.RELEASE</version>
+        </dependency>
+
 
         <dependency>
             <groupId>mysql</groupId>
@@ -65,17 +84,27 @@
             <version>1.1.12</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--依赖范围就是用来控制依赖和三种classpath(编译classpath，测试classpath、运行classpath)的关系，Maven有如下几种依赖范围：
+            compile:编译依赖范围。如果没有指定，就会默认使用该依赖范围。使用此依赖范围的Maven依赖，对于编译、测试、运行三种classpath都有效。
+                    典型的例子是spring-code,在编译、测试和运行的时候都需要使用该依赖。
+
+            test: 测试依赖范围。使用次依赖范围的Maven依赖，只对于测试classpath有效，在编译主代码或者运行项目的使用时将无法使用此依赖。
+                    典型的例子是Jnuit,它只有在编译测试代码及运行测试的时候才需要。
+
+            provided:已提供依赖范围。使用此依赖范围的Maven依赖，对于编译和测试classpath有效，但在运行时候无效。
+                    典型的例子是servlet-api,编译和测试项目的时候需要该依赖，但在运行项目的时候，由于容器以及提供，就不需要Maven重复地引入一遍。
+            -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -118,5 +147,6 @@
             </properties>
         </profile>
     </profiles>
+
 
 </project>
